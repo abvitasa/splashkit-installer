@@ -1,15 +1,12 @@
 # Install msys2
 & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install msys2
-
 # Install VS Code
 & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install Microsoft.VisualStudioCode
+# Install Git
+& "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install --id Git.Git -e --source winget
 
 # Installing the SplashKit SDK
 function InstallSplashKit {
-
-    # Install git
-    pacman -S git --noconfirm --disable-download-timeout
-
     # Install SplashKit (-O,  --output-document=FILE      write documents to FILE)
     wget https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh -O skm-install.sh
     bash skm-install.sh
