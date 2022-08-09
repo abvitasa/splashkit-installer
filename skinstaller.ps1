@@ -11,9 +11,9 @@ function InstallSplashKit {
     pacman -S git --noconfirm --disable-download-timeout
 
     # Install SplashKit (-O,  --output-document=FILE      write documents to FILE)
-    wget https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh -O skm-install.sh
-    bash skm-install.sh
-    rm skm-install.sh
+#     wget https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh -O skm-install.sh
+#     bash skm-install.sh
+#     rm skm-install.sh
 
 #     # Installing GCC on Windows for C++
 #     bash -l -c "yes | pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb"
