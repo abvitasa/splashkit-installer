@@ -46,7 +46,17 @@ function UbuntuInstall {
     zenity --info --text="All Installation  Complete"
 }
 
-UbuntuInstall
+# Check OS
+uname=$(uname);
+
+case "$uname" in 
+    (*Linux*) echo UbuntuInstall; ;;
+    (*Darwin*) echo "This is Darwin"; ;;
+    (*Cygwin*) echo "This is Cygwin"; ;;
+    (*) echo "ERROR"; ;;
+esac;
+
+
 exit #>
 
 #FOR WINDOWS
