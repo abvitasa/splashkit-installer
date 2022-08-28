@@ -1,8 +1,9 @@
-# FOR UBUNTU
-# ----------
-#!/usr/bin/env sh
+#!/bin/bash
 echo --% >/dev/null;: ' | out-null
 <#'
+
+# FOR UBUNTU
+# -----------------------------------------------------------
 function UbuntuInstall {
     choice1="CURL and GIT using apt Package"
     choice2="SplashKit Manager"
@@ -46,21 +47,61 @@ function UbuntuInstall {
     zenity --info --text="All Installation  Complete"
 }
 
-# Check OS
-uname=$(uname);
+# FOR MacOS
+# -----------------------------------------------------------
+function MacInstall {
+	read -p "Install xcode-select (y/n)? " installXcodeSelect
+	read -p "Install SplashKit SDK (y/n)? " installSplashKitSDK
+	read -p "Install Homebrew (y/n)? " installHomebrew
+	read -p "Install .NET SDK using brew (y/n)? " installDotNet
+	read -p "Install VS Code using brew (y/n)? " installVSCode
 
-case "$uname" in 
-    (*Linux*) echo UbuntuInstall; ;;
-    (*Darwin*) echo "This is Darwin"; ;;
-    (*Cygwin*) echo "This is Cygwin"; ;;
-    (*) echo "ERROR"; ;;
+	# Install xcode-select
+	if [[ "$installXcodeSelect" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Installing xcode-select ...";
+		sudo rm -rf /Library/Developer/CommandLineTools;
+		xcode-select --install;
+	fi
+
+	# Install SplashKit SDK
+	if [[ "$installSplashKitSDK" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Installing SplashKit SDK ...";
+		bash <(curl -s https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh);
+	fi
+
+	# Install Homebrew package manager
+	if [[ "$installHomebrew" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Installing Homebrew ...";
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+	fi
+
+	# Install .NET SDK using brew
+	if [[ "$installDotNet" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Installing .NET SDK ...";
+		brew install dotnet;
+	fi
+
+	# Install VS Code using brew
+	if [[ "$installVSCode" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Installing VS Code ...";
+		brew install --cask visual-studio-code;
+	fi
+
+    echo "Installation Complete!"
+}
+
+# Check if Linux or Darwin
+uname=$(uname)
+case "$uname" in
+	(*Linux*) UbuntuInstall; ;;
+	(*Darwin*) MacInstall; ;;
+	(*) echo "ERROR"; ;;
 esac;
-
 
 exit #>
 
 #FOR WINDOWS
-#-----------
+# -----------------------------------------------------------
 [reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
 [reflection.assembly]::loadwithpartialname("System.Drawing") | Out-Null
 
