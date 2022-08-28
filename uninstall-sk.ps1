@@ -1,10 +1,10 @@
-# FOR UBUNTU
-# ----------
-#!/usr/bin/env sh
+#!/bin/bash
 echo --% >/dev/null;: ' | out-null
 <#'
 
-function UbuntuInstall {
+# FOR UBUNTU
+# -----------------------------------------------------------
+function UbuntuRemove {
     choice1="Remove CURL and GIT"
     choice2="Remove SplashKit Manager and dependencies"
     choice3="Remove Visual Studio Code"
@@ -40,11 +40,61 @@ function UbuntuInstall {
     zenity --info --text="Uninstall  Complete"
 }
 
-'UbuntuInstall'
+# FOR MacOS
+# -----------------------------------------------------------
+function MacRemove {
+	read -p "Remove xcode-select (y/n)? " removeXcodeSelect
+	read -p "Remove SplashKit SDK (y/n)? " removeSplashKitSDK
+	read -p "Remove .NET SDK using brew (y/n)? " removeDotNet
+	read -p "Remove VS Code using brew (y/n)? " removeVSCode
+	read -p "Remove Homebrew (y/n)? " removeHomebrew
+
+	# Uninstall xcode-select
+	if [[ "$removeXcodeSelect" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Removing xcode-select ..."
+		sudo rm -rf /Library/Developer/CommandLineToolsplashkit		
+	fi
+
+	# Uninstall SplashKit SDK
+	if [[ "$removeSplashKitSDK" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Removing SplashKit SDK ...";
+		rm -rf /Users/$USER/.splashkit		
+	fi
+
+	# Uninstall dotnet
+	if [[ "$removeDotNet" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Removing .Net SDK ...";
+		brew uninstall dotnet;	
+	fi
+
+	# Uninstall VS Code
+	if [[ "$removeVSCode" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Removing VS Code ...";
+		brew uninstall visual-studio-code;	
+	fi
+
+
+	# Uninstall Homebrew package manager
+	if [[ "$removeHomebrew" =~ ^([yY][eE][sS]|[yY]) ]]; then
+		echo "Removing Homebrew ...";
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+	fi
+
+    echo "Uninstallation Complete!"
+}
+
+# Check if Linux or Darwin
+uname=$(uname)
+case "$uname" in
+	(*Linux*) UbuntuRemove; ;;
+	(*Darwin*) MacRemove; ;;
+	(*) echo "ERROR"; ;;
+esac;
+
 exit #>
 
 #FOR WINDOWS
-#-----------
+# -----------------------------------------------------------
 [reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
 [reflection.assembly]::loadwithpartialname("System.Drawing") | Out-Null
 
