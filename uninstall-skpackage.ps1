@@ -77,7 +77,7 @@ function MacRemove {
 	# Uninstall Homebrew package manager
 	if [[ "$removeHomebrew" =~ ^([yY][eE][sS]|[yY]) ]]; then
 		echo "Removing Homebrew ...";
-		/bin/bash -c "$(yes | curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+		/bin/bash -c yes | "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 	fi
 
     echo "Uninstallation Complete!"
