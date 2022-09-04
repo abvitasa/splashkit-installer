@@ -34,7 +34,7 @@ function UbuntuRemove {
 
     # Remove .NET 6 LTS Core SDK
     if [[ "${choices}" =~ "${choice4}" ]]; then
-        sudo apt-get remove -y dotnet6;
+        sudo apt-get remove -y dotnet-host;
     fi
 
     zenity --info --text="Uninstall  Complete"
@@ -115,7 +115,7 @@ $handler_button_Click=
 {
     if ($checkbox1.Checked) {
         $checkbox1.ForeColor = 'red'
-        $checkbox1.Text = "MSYS2 and Components (...Removing)"
+        $checkbox1.Text = "MSYS2, SplashKit, Git, and GCC (Removing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall msys2
         $checkbox1.ForeColor = 'green'
         $checkbox1.Text = "MSYS2 and Components (Removed)"
@@ -123,7 +123,7 @@ $handler_button_Click=
 
     if ($checkbox2.Checked) {
         $checkbox2.ForeColor = 'red'
-        $checkbox2.Text = "VS Code (...Removing)"
+        $checkbox2.Text = "VS Code (Removing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall Microsoft.VisualStudioCode
         $checkbox2.ForeColor = 'green'
         $checkbox2.Text = "VS Code (Removed)"
@@ -131,7 +131,7 @@ $handler_button_Click=
 
     if ($checkbox3.Checked) {
         $checkbox3.ForeColor = 'red'
-        $checkbox3.Text = ".Net 6 LTS Core SDK (... Removing)" 
+        $checkbox3.Text = ".Net 6 LTS Core SDK (Removing...)" 
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall Microsoft.DotNet.SDK.6
         $checkbox3.ForeColor = 'green'
         $checkbox3.Text = ".Net 6 LTS Core SDK (Removed)"
@@ -175,7 +175,7 @@ $System_Drawing_Size.Height = 30
 $checkbox1.UseVisualStyleBackColor = $True
 $checkbox1.Size = $System_Drawing_Size
 $checkbox1.TabIndex = 1
-$checkbox1.Text = "Remove MSYS2 and Components using Winget"
+$checkbox1.Text = "Remove MSYS2, SplashKit, Git, and GCC using Winget"
 $System_Drawing_Point = New-Object System.Drawing.Point
 $System_Drawing_Point.X = 25
 $System_Drawing_Point.Y = 15
