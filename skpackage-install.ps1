@@ -167,7 +167,7 @@ $handler_button_Click=
     if ($checkBox6.Checked) {
         $checkBox6.ForeColor = 'blue'
         $checkBox6.Text = "GCC for C++ (Installing...)"
-        bash -l -c "yes | pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb"
+        bash -l -c "pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb | yes"
         $checkBox6.ForeColor = 'green'
         $checkBox6.Text = "GCC for C++ (Done)"
     }
