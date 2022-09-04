@@ -115,21 +115,6 @@ $checkBox5 = New-Object System.Windows.Forms.CheckBox
 $checkBox6 = New-Object System.Windows.Forms.CheckBox
 $InitialFormWindowState = New-Object System.Windows.Forms.FormWindowState
 
-function InstallGit {
-    pacman -S git --noconfirm --disable-download-timeout
-}
-
-function InstallSplashKit {
-    # (-O,  --output-document=FILE      write documents to FILE)
-    wget https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh -O skm-install.sh
-    bash skm-install.sh
-    rm skm-install.sh    
-}
-
-function InstallGCC {
-    bash -l -c "yes | pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb"
-}
-
 $handler_button_Click= 
 {
     # Install msys2
@@ -163,7 +148,7 @@ $handler_button_Click=
     if ($checkBox4.Checked) {
         $checkBox4.ForeColor = 'blue'
         $checkBox4.Text = "Git using pacman (Installing...)" 
-        InstallGit
+        bash -l -c "pacman -S git --noconfirm --disable-download-timeout"
         $checkBox4.ForeColor = 'green'
         $checkBox4.Text = "Git using pacman (Done)"
 
@@ -173,7 +158,7 @@ $handler_button_Click=
     if ($checkBox5.Checked) {
         $checkBox5.ForeColor = 'blue'
         $checkBox5.Text = "SplashKit SDK (Installing...)"
-        InstallSplashKit
+        bash -l -c "bash <(curl -s https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh)" 
         $checkBox5.ForeColor = 'green'
         $checkBox5.Text = "SplashKit SDK (Done)"
     }
@@ -182,7 +167,7 @@ $handler_button_Click=
     if ($checkBox6.Checked) {
         $checkBox6.ForeColor = 'blue'
         $checkBox6.Text = "GCC for C++ (Installing...)"
-        InstallGCC
+        bash -l -c "yes | pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb"
         $checkBox6.ForeColor = 'green'
         $checkBox6.Text = "GCC for C++ (Done)"
     }
