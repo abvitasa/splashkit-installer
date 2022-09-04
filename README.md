@@ -26,3 +26,7 @@ Install Splashkit and related tools
 >wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1 -O - | bash
 >```
 > <br />
+
+
+## Copyrights
+Copyright (c) 2022 Auden Vitasa
