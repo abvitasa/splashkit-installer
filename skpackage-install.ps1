@@ -66,13 +66,13 @@ function MacInstall {
 	# Install SplashKit SDK
 	if [[ "$installSplashKitSDK" =~ ^([yY][eE][sS]|[yY]) ]]; then
 		echo "Installing SplashKit SDK ...";
-		bash <(curl -s https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh);
+		sudo yes| bash <(curl -s https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh);
 	fi
 
 	# Install Homebrew package manager
 	if [[ "$installHomebrew" =~ ^([yY][eE][sS]|[yY]) ]]; then
 		echo "Installing Homebrew ...";
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+		sudo yes| /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
 	fi
 
 	# Install .NET SDK using brew
