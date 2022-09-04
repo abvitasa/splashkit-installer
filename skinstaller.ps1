@@ -47,7 +47,7 @@ function UbuntuInstall {
     zenity --info --text="All Installation  Complete"
 }
 
-# FOR MacOS
+# FOR macOS
 # -----------------------------------------------------------
 function MacInstall {
 	read -p "Install xcode-select (y/n)? " installXcodeSelect
@@ -100,7 +100,7 @@ esac;
 
 exit #>
 
-#FOR WINDOWS
+# FOR WINDOWS
 # -----------------------------------------------------------
 [reflection.assembly]::loadwithpartialname("System.Windows.Forms") | Out-Null
 [reflection.assembly]::loadwithpartialname("System.Drawing") | Out-Null
@@ -135,7 +135,7 @@ $handler_button_Click=
     # Install msys2
     if ($checkBox1.Checked) {
         $checkBox1.ForeColor = 'blue'
-        $checkBox1.Text = "MSYS2 using Winget (...Installing)"
+        $checkBox1.Text = "MSYS2 using Winget (Installing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install msys2
         $checkBox1.ForeColor = 'green'
         $checkBox1.Text = "MSYS2 using Winget (Done)"
@@ -144,7 +144,7 @@ $handler_button_Click=
     # Install VS Code
     if ($checkBox2.Checked) {
         $checkBox2.ForeColor = 'blue'
-        $checkBox2.Text = "Visual Studio Code using Winget (...Installing)"
+        $checkBox2.Text = "Visual Studio Code using Winget (Installing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install Microsoft.VisualStudioCode
         $checkBox2.ForeColor = 'green'
         $checkBox2.Text = "Visual Studio Code using Winget (Done)"
@@ -153,7 +153,7 @@ $handler_button_Click=
     # Install the .NET 6 LTS Core SDK on Windows for C#
     if ($checkBox3.Checked) {
         $checkBox3.ForeColor = 'blue'
-        $checkBox3.Text = ".Net 6 LTS Core SDK using Winget (...Installing)"
+        $checkBox3.Text = ".Net 6 LTS Core SDK using Winget (Installing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" install Microsoft.DotNet.SDK.6
         $checkBox3.ForeColor = 'green'
         $checkBox3.Text = ".Net 6 LTS Core SDK using Winget (Done)"
@@ -162,7 +162,7 @@ $handler_button_Click=
     # Install Git
     if ($checkBox4.Checked) {
         $checkBox4.ForeColor = 'blue'
-        $checkBox4.Text = "Git using pacman (... Installing)" 
+        $checkBox4.Text = "Git using pacman (Installing...)" 
         InstallGit
         $checkBox4.ForeColor = 'green'
         $checkBox4.Text = "Git using pacman (Done)"
@@ -172,7 +172,7 @@ $handler_button_Click=
     # Install SplashKit Manager
     if ($checkBox5.Checked) {
         $checkBox5.ForeColor = 'blue'
-        $checkBox5.Text = "SplashKit SDK (...Installing)"
+        $checkBox5.Text = "SplashKit SDK (Installing...)"
         InstallSplashKit
         $checkBox5.ForeColor = 'green'
         $checkBox5.Text = "SplashKit SDK (Done)"
@@ -181,7 +181,7 @@ $handler_button_Click=
     # Installing GCC on Windows for C++
     if ($checkBox6.Checked) {
         $checkBox6.ForeColor = 'blue'
-        $checkBox6.Text = "GCC for C++ (...Installing)"
+        $checkBox6.Text = "GCC for C++ (Installing...)"
         InstallGCC
         $checkBox6.ForeColor = 'green'
         $checkBox6.Text = "GCC for C++ (Done)"
