@@ -105,12 +105,6 @@ $checkbox2 = New-Object System.Windows.Forms.CheckBox
 $checkbox3 = New-Object System.Windows.Forms.CheckBox
 $InitialFormWindowState = New-Object System.Windows.Forms.FormWindowState
 
-#!/bin/bash
-function RemoveSplashKit {
-    rm -rf /home/$env:UserName/.splashkit
-}
-
-
 $handler_button_Click= 
 {
     if ($checkbox1.Checked) {
@@ -118,7 +112,7 @@ $handler_button_Click=
         $checkbox1.Text = "MSYS2, SplashKit, Git, and GCC (Removing...)"
         & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall msys2
         $checkbox1.ForeColor = 'green'
-        $checkbox1.Text = "MSYS2 and Components (Removed)"
+        $checkbox1.Text = "MSYS2, SplashKit, Git, and GCC (Removed)"
     }
 
     if ($checkbox2.Checked) {
