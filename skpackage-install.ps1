@@ -293,27 +293,3 @@ $form.Controls.Add($checkBox6)
 
 $InitialFormWindowState = $form.WindowState
 $form.ShowDialog() | Out-Null
-
-# (uninstall SplashKit)
-# rm -rf /home/$USER/.splashkit
-# rm -rf /home/$env:UserName/.splashkit
-# (abvit)
-
-
-# (uninstall msys2)
-# & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall msys2
-
-# (uninstall VS Code)
-# & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall Microsoft.VisualStudioCode
-
-# (uninstall .NET Core SDK)
-# & "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget" uninstall Microsoft.DotNet.SDK.6
-
-# Install cmake and make tools (testing)
-# pacman -S mingw-w64-x86_64-cmake --noconfirm
-# pacman -S make --noconfirm
-
-# skm dotnet new console
-# skm dotnet restore
-# skm dotnet build
-# skm dotnet run --roll-forward LatestMajor
