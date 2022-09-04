@@ -7,9 +7,13 @@ Install Splashkit and related tools
 >```
 >iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1'))
 >```
->### MacOS and Ubuntu
+>### Ubuntu
 >```
 >wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1 -O - | bash
+>```
+>### MacOS
+>```
+>bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1)
 >```
 > <br />
 
@@ -21,9 +25,13 @@ Install Splashkit and related tools
 >```
 >iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1'))
 >```
->### MacOS and Ubuntu
+>### Ubuntu
 >```
 >wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1 -O - | bash
+>```
+>### MacOS
+>```
+>bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1)
 >```
 > <br />
 
