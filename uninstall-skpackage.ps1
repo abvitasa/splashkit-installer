@@ -52,7 +52,7 @@ function MacRemove {
 	# Uninstall xcode-select
 	if [[ "$removeXcodeSelect" =~ ^([yY][eE][sS]|[yY]) ]]; then
 		echo "Removing xcode-select ..."
-		sudo rm -rf /Library/Developer/CommandLineToolsplashkit		
+		sudo rm -rf /Library/Developer/CommandLineTools		
 	fi
 
 	# Uninstall SplashKit SDK
