@@ -125,7 +125,7 @@ $handler_button_Click=
         $checkBox1.ForeColor = 'green'
         $checkBox1.Text = "MSYS2 using Winget (Done)"
     }
-
+    Start-Sleep 1
     # Install VS Code
     if ($checkBox2.Checked) {
         $checkBox2.ForeColor = 'blue'
@@ -134,7 +134,7 @@ $handler_button_Click=
         $checkBox2.ForeColor = 'green'
         $checkBox2.Text = "Visual Studio Code using Winget (Done)"
     }
-
+    Start-Sleep 1
     # Install the .NET 6 LTS Core SDK on Windows for C#
     if ($checkBox3.Checked) {
         $checkBox3.ForeColor = 'blue'
@@ -143,7 +143,7 @@ $handler_button_Click=
         $checkBox3.ForeColor = 'green'
         $checkBox3.Text = ".Net 6 LTS Core SDK using Winget (Done)"
     }
-
+    Start-Sleep 1
     # Install Git
     if ($checkBox4.Checked) {
         $checkBox4.ForeColor = 'blue'
@@ -153,7 +153,7 @@ $handler_button_Click=
         $checkBox4.Text = "Git using pacman (Done)"
 
     }
-
+    Start-Sleep 1
     # Install SplashKit Manager
     if ($checkBox5.Checked) {
         $checkBox5.ForeColor = 'blue'
@@ -162,16 +162,15 @@ $handler_button_Click=
         $checkBox5.ForeColor = 'green'
         $checkBox5.Text = "SplashKit SDK (Done)"
     }
-
+    Start-Sleep 1
     # Installing GCC on Windows for C++
     if ($checkBox6.Checked) {
         $checkBox6.ForeColor = 'blue'
         $checkBox6.Text = "GCC for C++ (Installing...)"
-        bash -l -c "pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb | yes"
+        bash -l -c "pacman --noconfirm --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc mingw-w64-{i686,x86_64}-gdb"
         $checkBox6.ForeColor = 'green'
         $checkBox6.Text = "GCC for C++ (Done)"
     }
-
     Start-Sleep 1
     $form.Close() | Out-Null
 }
