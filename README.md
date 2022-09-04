@@ -1,7 +1,7 @@
 # skpackage-install
 Install Splashkit and related tools
 
-## To install, run the following in the terminal
+## Run the following in the terminal to install.
 
 >### Windows
 >```
@@ -19,7 +19,7 @@ Install Splashkit and related tools
 
 ---
 
-## To uninstall, run the following in the terminal
+## Run the following in the terminal to uninstall.
 
 >### Windows
 >```
