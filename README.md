@@ -17,7 +17,7 @@ Install Splashkit and related tools
 >```
 >### Ubuntu Container
 >```
->apt install wget; wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/sk-install-ubuntu-image.sh -O - | bash
+>apt install curl git -y && bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/sk-install-ubuntu-image.sh)
 >```
 > <br />
 ---
