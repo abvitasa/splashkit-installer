@@ -1,17 +1,10 @@
 #!/bin/bash
 
-read -p "Install Curl and Git using apt Package (y/n)? " installCurlGit
 read -p "Install SplashKit Manager (y/n)? " installSKM
 read -p "Install SplashKit linux dependencies (y/n)? " installSKdep
 read -p "Install .Net 6 LTS Core SDK using apt Package (y/n)? " installdotnet
 read -p "Install Nano IDE (y/n)? " installNano
 
-if [[ "$installCurlGit" =~ ^([yY][eE][sS]|[yY]) ]]; then
-	echo "---Installing Curl and Git...---";
-    	apt-get install curl git -y;
-	echo "---Curl and Git installed---";
-fi
-	
 if [[ "$installSKM" =~ ^([yY][eE][sS]|[yY]) ]]; then
 	echo "---Installing SplashKit Manager...---";
     	bash <(curl -s https://raw.githubusercontent.com/splashkit/skm/master/install-scripts/skm-install.sh);
