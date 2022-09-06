@@ -15,11 +15,11 @@ Install Splashkit and related tools
 >```
 >bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1)
 >```
-> <br />
 >### Ubuntu Container
 >```
->bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/sk-install-ubuntu-image.sh)
+>apt isntall wget; wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/sk-install-ubuntu-image.sh)
 >```
+> <br />
 ---
 
 ## Run the following in the terminal to uninstall.
