@@ -1,11 +1,11 @@
-# SplashKit all-in-one installer
+# SplashKit All-In-One (AIO) installer
 Install Splashkit and related tools on Windows, MacOS, and Ubuntu
 
 ## Run the following in the terminal to install.
 
 >### Windows
 >```
->iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/all-in-one.sh'))
+>iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/aio-install.sh'))
 >```
 >### Ubuntu
 >```
