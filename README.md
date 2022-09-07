@@ -5,19 +5,19 @@ Install Splashkit and related tools
 
 >### Windows
 >```
->iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1'))
+>iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/all-in-one.sh'))
 >```
 >### Ubuntu
 >```
->wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1 -O - | bash
+>wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/all-in-one.sh -O - | bash
 >```
 >### MacOS
 >```
->bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/skpackage-install.ps1)
+>bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/all-in-one.sh)
 >```
 >### Ubuntu Container
 >```
->apt install curl git -y && bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/sk-install-ubuntu-image.sh)
+>apt install curl git -y && bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/ubuntu-image.sh)
 >```
 > <br />
 ---
@@ -26,15 +26,15 @@ Install Splashkit and related tools
 
 >### Windows
 >```
->iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1'))
+>iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall.sh'))
 >```
 >### Ubuntu
 >```
->wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1 -O - | bash
+>wget https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall.sh -O - | bash
 >```
 >### MacOS
 >```
->bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall-skpackage.ps1)
+>bash <(curl -s https://raw.githubusercontent.com/abvitasa/splashkit-installer/master/uninstall.sh)
 >```
 > <br />
 
