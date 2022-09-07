@@ -1,5 +1,5 @@
-# skpackage-install
-Install Splashkit and related tools
+# SplashKit all-in-one installer
+Install Splashkit and related tools on Windows, MacOS, and Ubuntu
 
 ## Run the following in the terminal to install.
 
